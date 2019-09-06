@@ -11,7 +11,19 @@ class Display {
   float y;
   float dWidth;
   float dHeight;
+  int pos;
   String name;
+
+  void draw() {
+    // draw the rectangle with fill
+    fill(color(r, b, g));
+    rect(x, y, dWidth, dHeight);
+    // draw the text
+    fill(color(0,0,0));
+    text(pos, x + dWidth/2, y + dHeight/2);
+    text("(" + x + ", " + y + ")", x, y);
+    text("(" + (x + dWidth) + ", " + (y + dHeight) + ")", x + dWidth, y + dHeight);
+  }
 }
 
 Display[] displayData = new Display[100];
@@ -23,15 +35,13 @@ void setup() {
 }
 
 void draw() {
-  // draw rectangles
+  // clear the background
+  if (!isDrawing) {
+    background(255, 255, 255);
+  }
+  // draw all rectangles/displays
   for (int i = 0; i < count; i = i+1) {
-    //print(i, displayData[i]);
-    fill(color(displayData[i].r, displayData[i].b, displayData[i].g));
-    rect(displayData[i].x, displayData[i].y, displayData[i].dWidth, displayData[i].dHeight);
-    fill(color(0,0,0));
-    text(i, displayData[i].x + displayData[i].dWidth/2, displayData[i].y + displayData[i].dHeight/2);
-    text("(" + displayData[i].x + ", " + displayData[i].y + ")", displayData[i].x, displayData[i].y);
-    text("(" + (displayData[i].x + displayData[i].dWidth) + ", " + (displayData[i].y + displayData[i].dHeight) + ")", displayData[i].x + displayData[i].dWidth, displayData[i].y + displayData[i].dHeight);
+    displayData[i].draw();
   }
 }
 
@@ -58,8 +68,15 @@ void mousePressed() {
     displayData[count].b = random(255);
     displayData[count].g = random(255);
     displayData[count].exists = true;
-    
+    displayData[count].pos = count;
+
     count += 1;
   }
   
+}
+
+void mouseMoved() {
+  if (isDrawing) {
+    rect(rectA, rectB, mouseX - rectA, mouseY - rectB);
+  }
 }
