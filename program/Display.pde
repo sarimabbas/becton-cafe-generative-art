@@ -3,6 +3,9 @@ float x = 0;
 float y = 0;
 String name = "";
 
+// random color
+color c = color(random(255), random(255), random(255))
+
 /*
 Takes startPos and endPos object {x, y}
 */
@@ -13,7 +16,6 @@ void setup(startPos, endPos) {
 }
 
 void draw() {
-  background(255);
   display();
 }
 
