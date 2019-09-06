@@ -1,9 +1,12 @@
 void setup() {
   fullScreen();
+  //size(1024, 768);
   background(255, 255, 255);
+
 }
 
 void draw() {
+  background(255, 255, 255);
   int midY = height/2; 
   int midX = width/2;
   int x = 100; 
@@ -25,4 +28,11 @@ void draw() {
      line(midX+x, 0, midX+x, height);
      x = x + 100; 
   }
+    
+  
+    text( "x: " + mouseX + " y: " + mouseY, mouseX, mouseY );
+    fill(0, 0, 0);
+    
+    
+    
 }
