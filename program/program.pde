@@ -80,3 +80,9 @@ void mouseMoved() {
     rect(rectA, rectB, mouseX - rectA, mouseY - rectB);
   }
 }
+
+void keyPressed() {
+  
+  saveFrame("mapping-##.png");
+  
+}
