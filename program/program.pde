@@ -71,6 +71,8 @@ void mousePressed() {
     displayData[count].pos = count;
 
     count += 1;
+    
+    //need to add displayData[count].dWidth to a new array of just widths with count and height
   }
   
 }
@@ -83,6 +85,7 @@ void mouseMoved() {
 
 void keyPressed() {
   
-  saveFrame("mapping-##.png");
+  saveFrame("mapping-###.png");
+  
   
 }
