@@ -1,12 +1,30 @@
 Rectangle 0
-Height: 329.0px
-Widgth: 230.0px
-x: 197.0
-y: 115.0
+Height: -300.0px
+Width: -253.0px
+x: 752.0
+y: 642.0
 
 Rectangle 1
-Height: 429.0px
-Widgth: 270.0px
-x: 717.0
-y: 292.0
+Height: -104.0px
+Width: -1015.0px
+x: 1121.0
+y: 317.0
+
+Rectangle 2
+Height: -652.0px
+Width: -277.0px
+x: 481.0
+y: 789.0
+
+Rectangle 3
+Height: -293.0px
+Width: -439.0px
+x: 1222.0
+y: 745.0
+
+Rectangle 4
+Height: -339.0px
+Width: -212.0px
+x: 1203.0
+y: 355.0
 

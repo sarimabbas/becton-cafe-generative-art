@@ -67,6 +67,16 @@ void mousePressed() {
     rectC = mouseX - rectA;
     rectD = mouseY - rectB;
     
+    // sets x,y coord as the top left hand corner
+    if (mouseX > rectA) {
+      rectA = mouseX;
+      rectC = rectC * -1; 
+    }
+    if (mouseY > rectB) {
+      rectB = mouseY;
+      rectD = rectD * -1;
+    }
+     
     // create display object 
     displayData[count] = new Display();
     displayData[count].x = rectA;
