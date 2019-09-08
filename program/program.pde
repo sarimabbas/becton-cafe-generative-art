@@ -84,8 +84,11 @@ void mouseMoved() {
 }
 
 void keyPressed() {
-  
-  saveFrame("mapping-###.png");
+     if (key == 'c' || key == 'C') {
+      
+       saveFrame("mapping-###.png");
+       
+    }
   
   
 }
