@@ -22,7 +22,7 @@ class Display {
     // draw the text
     fill(color(0,0,0));
     text(pos, x + dWidth/2, y + dHeight/2);
-    text("(" + x + ", " + y + ")", x, y);
+    text("(" + x + ", " + y + ")", x, y); 
     text("(" + (x + dWidth) + ", " + (y + dHeight) + ")", x + dWidth, y + dHeight);
   }
 }
@@ -88,6 +88,8 @@ void mousePressed() {
 
 void mouseMoved() {
   if (isDrawing) {
+    background(255, 255, 255); 
+    draw();
     rect(rectA, rectB, mouseX - rectA, mouseY - rectB);
   }
 }
