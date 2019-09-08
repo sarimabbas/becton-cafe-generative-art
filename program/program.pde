@@ -25,6 +25,10 @@ class Display {
     text("(" + x + ", " + y + ")", x, y); 
     text("(" + (x + dWidth) + ", " + (y + dHeight) + ")", x + dWidth, y + dHeight);
   }
+
+  void clear() {
+    exists = false;
+  }
 }
 
 Display[] displayData = new Display[100];
@@ -44,7 +48,9 @@ void draw() {
   }
   // draw all rectangles/displays
   for (int i = 0; i < count; i = i+1) {
-    displayData[i].draw();
+    if (displayData[i].exists) {
+      displayData[i].draw();
+    }
   }
 }
 
@@ -95,15 +101,20 @@ void mouseMoved() {
 }
 
 void keyPressed() {
-     if (key == 'c' || key == 'C') {
-      
-       saveFrame("mapping-###.png");
-       
+  // save frame
+  if (key == 'c' || key == 'C') {
+    saveFrame("mapping-###.png");  
+  }
+  // clear all displays
+  if (key == 'd' || key == 'D') {
+    for (int i = 0; i < count; i = i+1) {
+      displayData[i].clear();
     }
-    
-    output.flush();
-    output.close();
+  }
+  // exit
+  if (key == 'e' || key == 'E') {
     exit();
-  
-  
+  }
+  output.flush();
+  output.close();
 }
