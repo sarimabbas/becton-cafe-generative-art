@@ -20,10 +20,29 @@ class Display {
     fill(color(r, b, g));
     rect(x, y, dWidth, dHeight);
     // draw the text
+    addText();
+  }
+  
+  void addText() {
+    String topLeft = "(" + x + ", " + y + ")";
+    String bottomRight = "(" + (x + dWidth) + ", " + (y + dHeight) + ")";
+    float brWidth = textWidth(bottomRight);
+    float tlHeight = 16;
+    PFont f;
+    f = createFont("Arial",16,true); // Arial, 16 point, anti-aliasing on
+    textFont(f);
     fill(color(0,0,0));
+    
     text(pos, x + dWidth/2, y + dHeight/2);
-    text("(" + x + ", " + y + ")", x, y); 
-    text("(" + (x + dWidth) + ", " + (y + dHeight) + ")", x + dWidth, y + dHeight);
+    
+    if (dWidth < brWidth*2 & dHeight < tlHeight*2) {
+      text(topLeft, x, y); 
+      text(bottomRight, x + dWidth, y + dHeight);
+    }
+    else {
+      text(topLeft, x, y+20); 
+      text(bottomRight, x + dWidth - brWidth, y + dHeight);
+    }
   }
 
   void clear() {
@@ -83,9 +102,9 @@ void mousePressed() {
     displayData[count].y = rectB;
     displayData[count].dWidth = rectC;
     displayData[count].dHeight = rectD;
-    displayData[count].r = random(255);
-    displayData[count].b = random(255);
-    displayData[count].g = random(255);
+    displayData[count].r = random(255) * 1.3; // made colors lighter 
+    displayData[count].b = random(255) * 1.3; // to better see the 
+    displayData[count].g = random(255) * 1.3; // black font
     displayData[count].exists = true;
     displayData[count].pos = count;
     output.println("Rectangle " + count);
