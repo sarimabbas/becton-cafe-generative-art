@@ -1,6 +1,7 @@
 int count = 0;
 int rectA, rectB, rectC, rectD;
 boolean isDrawing = false;
+PrintWriter output;
 
 class Display {
   boolean exists = false;
@@ -32,6 +33,8 @@ Display[] displayData = new Display[100];
 void setup() {
   // setup processing interface
   fullScreen();
+  output = createWriter("mapping_info.txt"); 
+
 }
 
 void draw() {
@@ -69,6 +72,12 @@ void mousePressed() {
     displayData[count].g = random(255);
     displayData[count].exists = true;
     displayData[count].pos = count;
+    output.println("Rectangle " + count);
+    output.println("Height: " + displayData[count].dHeight + "px");
+    output.println("Width: " + displayData[count].dWidth + "px");
+    output.println("x: " + displayData[count].x);
+    output.println("y: " + displayData[count].y);
+    output.println(""); 
 
     count += 1;
     
@@ -89,6 +98,10 @@ void keyPressed() {
        saveFrame("mapping-###.png");
        
     }
+    
+    output.flush();
+    output.close();
+    exit();
   
   
 }
