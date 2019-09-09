@@ -35,14 +35,14 @@ class Display {
     
     text(pos, x + dWidth/2, y + dHeight/2);
     
-    if (dWidth < brWidth*2 & dHeight < tlHeight*2) {
-      text(topLeft, x, y); 
-      text(bottomRight, x + dWidth, y + dHeight);
-    }
-    else {
-      text(topLeft, x, y+20); 
-      text(bottomRight, x + dWidth - brWidth, y + dHeight);
-    }
+    //if (dWidth < brWidth*2 & dHeight < tlHeight*2) {
+    //  text(topLeft, x, y); 
+    //  text(bottomRight, x + dWidth, y + dHeight);
+    //}
+    //else {
+    //  text(topLeft, x, y+20); 
+    //  text(bottomRight, x + dWidth - brWidth, y + dHeight);
+    //}
   }
 
   void clear() {
@@ -66,11 +66,22 @@ void draw() {
     background(255, 255, 255);
   }
   // draw all rectangles/displays
+  
   for (int i = 0; i < count; i = i+1) {
     if (displayData[i].exists) {
       displayData[i].draw();
     }
   }
+  
+    PFont f;
+    f = createFont("Arial",16,true); // Arial, 16 point, anti-aliasing on
+    textFont(f);
+    strokeWeight(3);
+    stroke(color(250, 50, 50));
+    line(mouseX, 0, mouseX, height);
+    line(0, mouseY, width, mouseY);
+    text( "x: " + mouseX + " y: " + mouseY, mouseX, mouseY );
+    fill(0, 0, 0);
 }
 
 void mousePressed() {
@@ -132,7 +143,9 @@ void mouseMoved() {
 void keyPressed() {
   // save frame
   if (key == 'c' || key == 'C') {
-    saveFrame("mapping-###.png");  
+    saveFrame("mapping-###.png");
+    output.flush();
+    output.close();
   }
   // clear all displays
   if (key == 'd' || key == 'D') {
@@ -144,6 +157,4 @@ void keyPressed() {
   if (key == 'e' || key == 'E') {
     exit();
   }
-  output.flush();
-  output.close();
 }
