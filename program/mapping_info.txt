@@ -1,48 +1,42 @@
 Rectangle 0
-Height: 160.0px
-Width: 234.0px
-x: 373.0
-y: 201.0
+Height: 290.0px
+Width: 203.0px
+x: 791.0
+y: 207.0
 
 Rectangle 1
-Height: 232.0px
-Width: 276.0px
-x: 518.0
-y: 478.0
+Height: 517.0px
+Width: 530.0px
+x: 199.0
+y: 216.0
 
 Rectangle 2
-Height: 244.0px
-Width: 278.0px
-x: 113.0
-y: 382.0
-
-Rectangle 3
-Height: 93.0px
-Width: 762.0px
-x: 142.0
-y: 104.0
-
-Rectangle 4
-Height: 586.0px
-Width: 325.0px
-x: 954.0
+Height: 451.0px
+Width: 526.0px
+x: 753.0
 y: 0.0
 
+Rectangle 3
+Height: 413.0px
+Width: 378.0px
+x: 844.0
+y: 342.0
+
+Rectangle 4
+Height: 154.0px
+Width: 96.0px
+x: 567.0
+y: 181.0
+
 Rectangle 5
-Height: 133.0px
-Width: 627.0px
-x: 581.0
-y: 635.0
+Height: 282.0px
+Width: 235.0px
+x: 122.0
+y: 0.0
 
 Rectangle 6
-Height: 492.0px
-Width: 345.0px
-x: 283.0
-y: 274.0
-
-Rectangle 7
-Height: 288.0px
-Width: 376.0px
-x: 903.0
-y: 417.0
+Height: 272.0px
+Width: 372.0px
+x: 3.0
+y: 244.0
 
