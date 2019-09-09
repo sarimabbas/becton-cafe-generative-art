@@ -8,3 +8,9 @@ Deliverables:
 
 (5 pts) Documentation that describes the mapping of pixels to physical space. You can express this as raw pixel values, or as display percentage values. You will be graded on the ability of a third party (who has never seen this display before) to understand the layout.
 (5 pts) The program that you used to discover this mapping. You may choose to first find the rough mapping manually (eg moving your mouse around), then write the program, but the program should be sufficient to discover the mapping in a semi-automated way as well. This program can be run from a laptop (need not be the Raspberry Pi).
+
+To-Do:
+
+Bryce will write documentation for our program process -- why we did what we did, how to use it, etc.
+
+TanTan will markup photos of the physical space to the corresponding squares, and in this readme will write up a documentation that describes the mapping of pixels-physical space, referencing the files that we have. 
