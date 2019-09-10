@@ -4,7 +4,8 @@ Team: Sarim Abbas, Bryce Bjork, Cynthia Vu, TanTan Wang
 
 Based on the program that our team has created, we have mapped out the layout
 of the Becton center LED panels. You can find all of the relevant
-documentation in the "mapping" folder, which contains three resources.
+documentation in the "mapping" folder, which contains three resources. You can find our program code
+in the "program" folder.
 
 a. "mapping.png"  
 This image file shows the layout of the entire screen space, with the LED
