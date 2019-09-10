@@ -1,16 +1,26 @@
-In addition to the large contiguous display in the cafe itself, the same HDMI input is partially displayed on the square display panels in the hall of the Becton entrance. You task is to write a program to discover the mapping of screen space to physical space. Your program should be semi-automatic in that it may require human input. One example solution would be a program whereby clicking on the screen displays a single pixel and its coordinates. By clicking around the screen, you can discover critical points of the display, which you then record in your docs.
+CPSC334 Creative Embedded Systems
+Module: Generative Art, Task 1
+Team: Sarim Abbas, Bryce Bjork, Cynthia Vu, TanTan Wang
 
-We will introduce the programming language Processing in class, but you are free to use any language of your choosing.
+Based on the program that our team has created, we have mapped out the layout
+of the Becton center LED panels. You can find all of the relevant
+documentation in the "mapping" folder, which contains three resources.
 
-This task is a team project. You will need your team members in order to help map out the physical layout of pixels, as the HDMI connection is in a separate room than some of the display. You will need to work together (read, shout at each other through the halls) in order to build a map of the pixels. You may submit a single repository as long as each group member has at least one commit (for tracking purposes).
+a. "mapping.png"
+	This image file shows the layout of the entire screen space, with the LED
+	panels as numbered colored blocks. Each rectangle's number corresponds to
+	the same one in text file "mapping_info.txt" which contains specific data
+	about each rectangle. 
+	
+b. "mapping_info.txt"
+	This text file contains information of the height and width of the
+	rectangle, as well as the x/y coordinates of the top left corner of each
+	rectangle. 
 
-Deliverables:
-
-(5 pts) Documentation that describes the mapping of pixels to physical space. You can express this as raw pixel values, or as display percentage values. You will be graded on the ability of a third party (who has never seen this display before) to understand the layout.
-(5 pts) The program that you used to discover this mapping. You may choose to first find the rough mapping manually (eg moving your mouse around), then write the program, but the program should be sufficient to discover the mapping in a semi-automated way as well. This program can be run from a laptop (need not be the Raspberry Pi).
-
-To-Do:
-
-Bryce will write documentation for our program process -- why we did what we did, how to use it, etc.
-
-TanTan will markup photos of the physical space to the corresponding squares, and in this readme will write up a documentation that describes the mapping of pixels-physical space, referencing the files that we have. 
+c. "physicalpanels.jpg"
+	This series of images are of the physical LED panels outside of the Cafe.
+	Each panel is labeled with the corresponding rectangle number in
+	"mapping.png" and "mapping_info.txt".
+	
+	
+	
