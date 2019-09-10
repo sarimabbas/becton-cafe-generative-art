@@ -1,5 +1,5 @@
-CPSC334 Creative Embedded Systems
-Module: Generative Art, Task 1
+CPSC334 Creative Embedded Systems 
+Module: Generative Art, Task 1  
 Team: Sarim Abbas, Bryce Bjork, Cynthia Vu, TanTan Wang
 
 Based on the program that our team has created, we have mapped out the layout
