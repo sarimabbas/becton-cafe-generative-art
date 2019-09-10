@@ -1,4 +1,4 @@
-CPSC334 Creative Embedded Systems 
+CPSC334 Creative Embedded Systems. 
 Module: Generative Art, Task 1  
 Team: Sarim Abbas, Bryce Bjork, Cynthia Vu, TanTan Wang
 
