@@ -18,10 +18,10 @@ class DisplayImporter:
                 displays.append(
                     Display(
                         number=rectangle["number"],
-                        xLeft=rectangle["x"],
-                        yTop=rectangle["y"],
-                        dWidth=rectangle["width"],
-                        dHeight=rectangle["height"],
+                        xLeft=rectangle["xLeft"],
+                        yTop=rectangle["yTop"],
+                        dWidth=rectangle["dWidth"],
+                        dHeight=rectangle["dHeight"],
                     )
                 )
 
@@ -45,7 +45,7 @@ def setup():
     print(displays[0].dWidth, displays[0].dHeight)
 
     for d in displays:
-        rect(d.xLeft, d.yTop, d.dWidth, d.dHeight)
+        d.draw()
 
 
 def draw():
