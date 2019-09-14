@@ -1,4 +1,3 @@
-# transform file to display objects
 import json
 import sys
 
@@ -20,9 +19,7 @@ class DisplayImporter:
                     Display(
                         number=rectangle["number"],
                         xLeft=rectangle["x"],
-                        xRight=rectangle["x"] + rectangle["width"],
                         yTop=rectangle["y"],
-                        yBottom=rectangle["y"] + rectangle["height"],
                         dWidth=rectangle["width"],
                         dHeight=rectangle["height"],
                     )
@@ -40,7 +37,7 @@ def setup():
     fullScreen()
     background(0)
     noStroke()
-    di = DisplayImporter("../mapping/mapping.json")
+    di = DisplayImporter("../mapper/mapping.json")
     di.importFile()
     di.dimensionScaler()
 
