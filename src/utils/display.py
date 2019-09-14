@@ -29,15 +29,20 @@ class Display:
     def clear(self):
         self.exists = False
 
-    def draw(self):
-        # rectangle
-        fill(color(self.rgb[0], self.rgb[1], self.rgb[2]))
-        rect(self.xLeft, self.yTop, self.dWidth, self.dHeight)
+    def draw(self, callback=None):
+        if callback:
+            callback(self)
+        else:
+            # rectangle
+            fill(color(self.rgb[0], self.rgb[1], self.rgb[2]))
+            rect(self.xLeft, self.yTop, self.dWidth, self.dHeight)
 
-        # add text
-        textFont(createFont("Arial", 16, True))
-        fill(color(0, 0, 0))
-        text(self.number, self.xLeft + self.dWidth / 2, self.yTop + self.dHeight / 2)
+            # add text
+            textFont(createFont("Arial", 16, True))
+            fill(color(0, 0, 0))
+            text(
+                self.number, self.xLeft + self.dWidth / 2, self.yTop + self.dHeight / 2
+            )
 
 
 class DisplayImporter:

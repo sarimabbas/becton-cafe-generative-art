@@ -1,6 +1,7 @@
 import json
 import sys
-from random import randint
+import os
+from random import randint, choice
 
 sys.path.insert(0, "../utils")
 from display import Display, DisplayImporter
@@ -12,12 +13,37 @@ class GlobalV:
     scaleFactor = 0.5
 
 
-def pickRandomEmoji():
-    listStrs = list(emojiLists.keys())
-    randomListIndex = randint(0, len(emojiLists) - 1)
-    randomList = emojiLists[listStrs[randomListIndex]]
-    randomEmoji = randomList[randint(0, len(randomList))]
-    return randomEmoji
+# class EmojiDisplay(Display):
+
+
+# def pickRandomEmoji():
+#     listStrs = list(emojiLists.keys())
+#     randomListIndex = randint(0, len(emojiLists) - 1)
+#     randomList = emojiLists[listStrs[randomListIndex]]
+#     randomEmoji = randomList[randint(0, len(randomList) - 1)]
+#     return randomEmoji
+
+
+def pickRandomEmojiImage():
+    imagesList = os.listdir("data/emoji-160")
+    return choice(imagesList)
+
+
+def smallPanelEmojiDraw(display):
+    # black background
+    fill(color(0, 0, 0))
+    rect(display.xLeft, display.yTop, display.dWidth, display.dHeight)
+    # get random emoji
+    imageData = loadImage("emoji-160/" + pickRandomEmojiImage())
+    # draw emoji
+    imageMode(CENTER)
+    image(
+        imageData,
+        display.xLeft + (display.dWidth / 2),
+        display.yTop + (display.dHeight / 2),
+        display.dHeight,  # size
+        display.dHeight,  # size
+    )
 
 
 def setup():
@@ -28,11 +54,9 @@ def setup():
     di.importFile(GlobalV.displays)
     # di.dimensionScaler()
 
-    print(pickRandomEmoji())
-    print(GlobalV.displays)
-
-    for d in GlobalV.displays:
-        d.draw()
+    # draw small panels
+    for d in GlobalV.displays[1:]:
+        d.draw(callback=smallPanelEmojiDraw)
 
 
 def draw():
