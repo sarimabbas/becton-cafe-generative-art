@@ -54,10 +54,12 @@ def setup():
     di.importFile(GlobalV.displays)
     # di.dimensionScaler()
 
-    # draw small panels
-    for d in GlobalV.displays[1:]:
-        d.draw(callback=smallPanelEmojiDraw)
+    # # draw small panels
+    # for d in GlobalV.displays[1:]:
+    #     d.draw(callback=smallPanelEmojiDraw)
 
 
 def draw():
-    pass
+    for d in GlobalV.displays[1:]:
+        d.draw(callback=smallPanelEmojiDraw)
+    delay(5000)
