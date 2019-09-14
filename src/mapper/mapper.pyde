@@ -17,7 +17,8 @@ class GlobalV:
 
 
 def setup():
-    fullScreen()
+    size(1920 / 2, 1080 / 2)
+    # fullScreen()
 
 
 def draw():
@@ -108,4 +109,3 @@ def keyPressed():
     if key == "d":
         GlobalV.displays = []
         GlobalV.displayCount = 0
-

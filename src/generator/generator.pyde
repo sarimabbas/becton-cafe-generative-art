@@ -6,6 +6,8 @@ from display import Display
 
 displays = []
 
+scaleFactor = 0.5
+
 
 class DisplayImporter:
     def __init__(self, filePath):
@@ -27,19 +29,20 @@ class DisplayImporter:
 
     def dimensionScaler(self):
         for d in displays:
-            d.xLeft = 1.5 * d.xLeft
-            d.dWidth = 1.5 * d.dWidth
-            d.yTop = (5 / 3) * d.yTop
-            d.dHeight = (5 / 3) * d.dHeight
+            d.xLeft = d.xLeft * scaleFactor
+            d.dWidth = d.dWidth * scaleFactor
+            d.yTop = d.yTop * scaleFactor
+            d.dHeight = d.dHeight * scaleFactor
 
 
 def setup():
-    fullScreen()
-    background(0)
-    noStroke()
-    di = DisplayImporter("../mapper/mapping.json")
+    # size(1920 / 2, 1080 / 2)
+    fullScreen(2)
+    # background(0)
+    # noStroke()
+    di = DisplayImporter("../mapper/mapping-final.json")
     di.importFile()
-    di.dimensionScaler()
+    # di.dimensionScaler()
 
     print(displays[0])
     print(displays[0].dWidth, displays[0].dHeight)
