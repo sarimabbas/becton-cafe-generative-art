@@ -34,6 +34,17 @@ def draw():
     stroke(color(250, 50, 50))
     line(mouseX, 0, mouseX, height)
     line(0, mouseY, width, mouseY)
+    # coordinates next to cursor
+    if mouseX >= width / 2:
+        if mouseY >= height / 2:
+            textAlign(RIGHT, BOTTOM)
+        else:
+            textAlign(RIGHT, TOP)
+    else:
+        if mouseY >= height / 2:
+            textAlign(LEFT, BOTTOM)
+        else:
+            textAlign(LEFT, TOP)
     text("x: " + str(mouseX) + " y: " + str(mouseY), mouseX, mouseY)
     fill(0, 0, 0)
 
@@ -69,6 +80,7 @@ def mousePressed():
         GlobalV.displayCount += 1
 
 
+# track the mouse cursor as it draws
 def mouseMoved():
     if GlobalV.isDrawing:
         background(255, 255, 255)
@@ -78,22 +90,22 @@ def mouseMoved():
         )
 
 
-# void keyPressed() {
-#   // save frame
-#   if (key == 'c' || key == 'C') {
-#     saveFrame("mapping-###.png");
-#     output.flush();
-#     output.close();
-#   }
-#   // clear all displays
-#   if (key == 'd' || key == 'D') {
-#     for (int i = 0; i < count; i = i+1) {
-#       displayData[i].clear();
-#     }
-#   }
-#   // exit
-#   if (key == 'e' || key == 'E') {
-#     exit();
-#   }
-# }
+def keyPressed():
+    # save
+    if key == "s":
+        saveFrame("mapping.png")
+        mapping = {"rectangles": [d.toObj() for d in GlobalV.displays]}
+        with open("mapping.json", "w") as fp:
+            fp.write(json.dumps(mapping, sort_keys=True, indent=4))
+    # exit
+    if key == "e":
+        exit()
+    # undo
+    if key == "z":
+        GlobalV.displays.pop()
+        GlobalV.displayCount -= 1
+    # clear all
+    if key == "d":
+        GlobalV.displays = []
+        GlobalV.displayCount = 0
 

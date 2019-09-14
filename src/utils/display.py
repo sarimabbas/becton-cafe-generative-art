@@ -1,17 +1,30 @@
+import json
+
+
 class Display:
-    def __init__(self, number=-1, xLeft=0, yTop=0, dWidth=0, dHeight=0):
+    def __init__(self, number=-1, xLeft=0, yTop=0, dWidth=0, dHeight=0, exists=True):
         self.number = number
         self.xLeft = xLeft
         self.yTop = yTop
         self.dWidth = dWidth
         self.dHeight = dHeight
         self.rgb = (random(255) * 1.3, random(255) * 1.3, random(255) * 1.3)
-        self.exists = True
+        self.exists = exists
 
     def __repr__(self):
         return "<D{self.number} : ({self.xLeft} , {self.yTop}), (width: {self.dWidth}, height: {self.dHeight})>".format(
             self=self
         )
+
+    def toObj(self):
+        return {
+            "number": self.number,
+            "xLeft": self.xLeft,
+            "yTop": self.yTop,
+            "dWidth": self.dWidth,
+            "dHeight": self.dHeight,
+            "exists": self.exists
+        }
 
     def clear(self):
         self.exists = False

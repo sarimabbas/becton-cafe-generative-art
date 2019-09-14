@@ -1,0 +1,20 @@
+{
+    "rectangles": [
+        {
+            "dHeight": 368, 
+            "dWidth": 408, 
+            "exists": true, 
+            "number": 0, 
+            "xLeft": 728, 
+            "yTop": 207
+        }, 
+        {
+            "dHeight": 321, 
+            "dWidth": 391, 
+            "exists": true, 
+            "number": 1, 
+            "xLeft": 107, 
+            "yTop": 347
+        }
+    ]
+}
