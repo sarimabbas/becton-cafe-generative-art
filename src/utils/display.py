@@ -23,7 +23,7 @@ class Display:
             "yTop": self.yTop,
             "dWidth": self.dWidth,
             "dHeight": self.dHeight,
-            "exists": self.exists
+            "exists": self.exists,
         }
 
     def clear(self):
@@ -38,3 +38,29 @@ class Display:
         textFont(createFont("Arial", 16, True))
         fill(color(0, 0, 0))
         text(self.number, self.xLeft + self.dWidth / 2, self.yTop + self.dHeight / 2)
+
+
+class DisplayImporter:
+    def __init__(self, filePath):
+        self.filePath = filePath
+
+    def importFile(self, displays):
+        with open(self.filePath) as fp:
+            contents = json.loads(fp.read())
+            for rectangle in contents["rectangles"]:
+                displays.append(
+                    Display(
+                        number=rectangle["number"],
+                        xLeft=rectangle["xLeft"],
+                        yTop=rectangle["yTop"],
+                        dWidth=rectangle["dWidth"],
+                        dHeight=rectangle["dHeight"],
+                    )
+                )
+
+    def dimensionScaler(self, displays, scaleFactor=1):
+        for d in displays:
+            d.xLeft = d.xLeft * self.scaleFactor
+            d.dWidth = d.dWidth * self.scaleFactor
+            d.yTop = d.yTop * self.scaleFactor
+            d.dHeight = d.dHeight * self.scaleFactor
