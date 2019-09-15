@@ -52,7 +52,11 @@ I thought about how I could populate the Becton LED panels with these emoji, in 
 
 There are 15 LED panels in the outer space. I configured them to show splashes of color from random emoji. These "deconstructed" emoji are interesting enough to warrant closer inspection, but due to the low resolution of the panels, their distinguishing features cannot be resolved. So the visitor may be drawn to the cafe, where the emoji are being randomized in unison.
 
+![Outside](./docs/outside.png)
+
 Inside the cafe, there are 3 columns of 4 emoji each that take up the entire screen space. I found that to be the optimal size for 1) showing image detail and 2) giving the impression that there are "sentences" formed by the emoji. It is up to the viewer to interpret sentences by column or row.
+
+![Inside](./docs/inside.png)
 
 ### Generator usage
 
