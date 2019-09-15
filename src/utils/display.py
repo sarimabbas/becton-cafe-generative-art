@@ -62,10 +62,3 @@ class DisplayImporter:
                         dHeight=rectangle["dHeight"],
                     )
                 )
-
-    def dimensionScaler(self, displays, scaleFactor=1):
-        for d in displays:
-            d.xLeft = d.xLeft * self.scaleFactor
-            d.dWidth = d.dWidth * self.scaleFactor
-            d.yTop = d.yTop * self.scaleFactor
-            d.dHeight = d.dHeight * self.scaleFactor

@@ -5,23 +5,11 @@ from random import randint, choice
 
 sys.path.insert(0, "../utils")
 from display import Display, DisplayImporter
-from emoji import emojiLists
 
 
 class GlobalV:
     displays = []
     scaleFactor = 0.5
-
-
-# class EmojiDisplay(Display):
-
-
-# def pickRandomEmoji():
-#     listStrs = list(emojiLists.keys())
-#     randomListIndex = randint(0, len(emojiLists) - 1)
-#     randomList = emojiLists[listStrs[randomListIndex]]
-#     randomEmoji = randomList[randint(0, len(randomList) - 1)]
-#     return randomEmoji
 
 
 def pickRandomEmojiImage():
@@ -57,75 +45,75 @@ def largePanelEmojiDraw(display):
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth / 6),
-            "y": display.yTop + (display.dHeight * 2 / 9),
+            "y": display.yTop + (display.dHeight * 1 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth / 6),
-            "y": display.yTop + (display.dHeight * 4 / 9),
+            "y": display.yTop + (display.dHeight * 3 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth / 6),
-            "y": display.yTop + (display.dHeight * 6 / 9),
+            "y": display.yTop + (display.dHeight * 5 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth / 6),
-            "y": display.yTop + (display.dHeight * 8 / 9),
+            "y": display.yTop + (display.dHeight * 7 / 8),
         },
         # second column
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth * 3 / 6),
-            "y": display.yTop + (display.dHeight * 2 / 9),
+            "y": display.yTop + (display.dHeight * 1 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth * 3 / 6),
-            "y": display.yTop + (display.dHeight * 4 / 9),
+            "y": display.yTop + (display.dHeight * 3 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth * 3 / 6),
-            "y": display.yTop + (display.dHeight * 6 / 9),
+            "y": display.yTop + (display.dHeight * 5 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth * 3 / 6),
-            "y": display.yTop + (display.dHeight * 8 / 9),
+            "y": display.yTop + (display.dHeight * 7 / 8),
         },
         # third column
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth * 5 / 6),
-            "y": display.yTop + (display.dHeight * 2 / 9),
+            "y": display.yTop + (display.dHeight * 1 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth * 5 / 6),
-            "y": display.yTop + (display.dHeight * 4 / 9),
+            "y": display.yTop + (display.dHeight * 3 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth * 5 / 6),
-            "y": display.yTop + (display.dHeight * 6 / 9),
+            "y": display.yTop + (display.dHeight * 5 / 8),
         },
         {
             "column": 0,
             "direction": "down",
             "x": display.xLeft + (display.dWidth * 5 / 6),
-            "y": display.yTop + (display.dHeight * 8 / 9),
+            "y": display.yTop + (display.dHeight * 7 / 8),
         },
     ]
     imageMode(CENTER)
