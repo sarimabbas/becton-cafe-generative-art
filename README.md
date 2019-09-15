@@ -46,7 +46,7 @@ I had a number of objectives:
 - My art would be specific to the layout of the Becton, and would utilize each panel as a discrete pixel space
 - The outer panels would try to draw visitors towards the inside of the cafe
 
-For the first objective, I took inspiration from the ways in which we communicate with each over the Internet: GIFs, memes and emoji. These have brought new meaning and emotion into our conversations. For instance, take this string of emoji: "🚫😢🍼💦". It could be taken to mean: "Don't cry over spilled milk". Emoji combinations like these can convey deep meaning, but also remain playfully ambiguous.
+For the first objective, I took inspiration from the ways in which we communicate with each over the Internet: GIFs, memes and emoji. These have brought new meaning and emotion into our conversations. For instance, take this string of emoji: "🚫😢🍼💦". It could be taken to mean: "Don't cry over spilled milk". Emoji combinations like these can convey potentially deep meaning, but also remain playfully ambiguous.
 
 I thought about how I could populate the Becton LED panels with these emoji, in a way that I could also accomplish my other objectives. My `generator` program renders patterns of random emoji that are open to interpretation by the viewer.
 
