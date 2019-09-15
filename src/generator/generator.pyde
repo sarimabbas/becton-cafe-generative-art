@@ -46,20 +46,104 @@ def smallPanelEmojiDraw(display):
     )
 
 
-def setup():
-    # size(1920 / 2, 1080 / 2)
-    fullScreen(2)
+def largePanelEmojiDraw(display):
+    # black background
+    fill(color(0, 0, 0))
+    rect(display.xLeft, display.yTop, display.dWidth, display.dHeight)
+    # get a column of emojis
+    emojiList = [
+        # first column
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth / 6),
+            "y": display.yTop + (display.dHeight * 2 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth / 6),
+            "y": display.yTop + (display.dHeight * 4 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth / 6),
+            "y": display.yTop + (display.dHeight * 6 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth / 6),
+            "y": display.yTop + (display.dHeight * 8 / 9),
+        },
+        # second column
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth * 3 / 6),
+            "y": display.yTop + (display.dHeight * 2 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth * 3 / 6),
+            "y": display.yTop + (display.dHeight * 4 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth * 3 / 6),
+            "y": display.yTop + (display.dHeight * 6 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth * 3 / 6),
+            "y": display.yTop + (display.dHeight * 8 / 9),
+        },
+        # third column
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth * 5 / 6),
+            "y": display.yTop + (display.dHeight * 2 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth * 5 / 6),
+            "y": display.yTop + (display.dHeight * 4 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth * 5 / 6),
+            "y": display.yTop + (display.dHeight * 6 / 9),
+        },
+        {
+            "column": 0,
+            "direction": "down",
+            "x": display.xLeft + (display.dWidth * 5 / 6),
+            "y": display.yTop + (display.dHeight * 8 / 9),
+        },
+    ]
+    imageMode(CENTER)
+    for img in emojiList:
+        imageData = loadImage("emoji-160/" + pickRandomEmojiImage())
+        image(imageData, img["x"], img["y"])
 
+
+def setup():
+    fullScreen(2)
     di = DisplayImporter("../mapper/mapping-final.json")
     di.importFile(GlobalV.displays)
-    # di.dimensionScaler()
-
-    # # draw small panels
-    # for d in GlobalV.displays[1:]:
-    #     d.draw(callback=smallPanelEmojiDraw)
 
 
 def draw():
+    # draw on the large panel
+    GlobalV.displays[0].draw(callback=largePanelEmojiDraw)
+    # draw on the small panels outside
     for d in GlobalV.displays[1:]:
         d.draw(callback=smallPanelEmojiDraw)
     delay(5000)
