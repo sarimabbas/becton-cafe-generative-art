@@ -279,3 +279,23 @@ emojiLists = {
     "food": food,
     "objects": objects,
 }
+
+
+largePanelConfig = [
+    # first column
+    {"column": 0, "direction": "down", "x": 0, "y": 0},
+    {"column": 0, "direction": "down", "x": 0, "y": 0},
+    {"column": 0, "direction": "down", "x": 0, "y": 0},
+    {"column": 0, "direction": "down", "x": 0, "y": 0},
+    # second column
+    {"column": 0, "direction": "up", "x": 0, "y": 0},
+    {"column": 0, "direction": "up", "x": 0, "y": 0},
+    {"column": 0, "direction": "up", "x": 0, "y": 0},
+    {"column": 0, "direction": "up", "x": 0, "y": 0},
+    # third column
+    {"column": 0, "direction": "down", "x": 0, "y": 0},
+    {"column": 0, "direction": "down", "x": 0, "y": 0},
+    {"column": 0, "direction": "down", "x": 0, "y": 0},
+    {"column": 0, "direction": "down", "x": 0, "y": 0},
+]
+

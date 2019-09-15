@@ -5,23 +5,11 @@ from random import randint, choice
 
 sys.path.insert(0, "../utils")
 from display import Display, DisplayImporter
-from emoji import emojiLists
+from emoji import largePanelConfig
 
 
 class GlobalV:
     displays = []
-    scaleFactor = 0.5
-
-
-# class EmojiDisplay(Display):
-
-
-# def pickRandomEmoji():
-#     listStrs = list(emojiLists.keys())
-#     randomListIndex = randint(0, len(emojiLists) - 1)
-#     randomList = emojiLists[listStrs[randomListIndex]]
-#     randomEmoji = randomList[randint(0, len(randomList) - 1)]
-#     return randomEmoji
 
 
 def pickRandomEmojiImage():
@@ -46,103 +34,70 @@ def smallPanelEmojiDraw(display):
     )
 
 
-def largePanelEmojiDraw(display):
+def largePanelConfigInit():
+    xL = GlobalV.displays[0].xLeft
+    yT = GlobalV.displays[0].yTop
+    dW = GlobalV.displays[0].dWidth
+    dH = GlobalV.displays[0].dHeight
+    # column 1
+    largePanelConfig[0]["x"] = xL + (dW / 6)
+    largePanelConfig[0]["y"] = yT + (dH * 1 / 8)
+    largePanelConfig[1]["x"] = xL + (dW / 6)
+    largePanelConfig[1]["y"] = yT + (dH * 3 / 8)
+    largePanelConfig[2]["x"] = xL + (dW / 6)
+    largePanelConfig[2]["y"] = yT + (dH * 5 / 8)
+    largePanelConfig[3]["x"] = xL + (dW / 6)
+    largePanelConfig[3]["y"] = yT + (dH * 7 / 8)
+    # column 2
+    largePanelConfig[4]["x"] = xL + (dW * 3 / 6)
+    largePanelConfig[4]["y"] = yT + (dH * 1 / 8)
+    largePanelConfig[5]["x"] = xL + (dW * 3 / 6)
+    largePanelConfig[5]["y"] = yT + (dH * 3 / 8)
+    largePanelConfig[6]["x"] = xL + (dW * 3 / 6)
+    largePanelConfig[6]["y"] = yT + (dH * 5 / 8)
+    largePanelConfig[7]["x"] = xL + (dW * 3 / 6)
+    largePanelConfig[7]["y"] = yT + (dH * 7 / 8)
+    # column 3
+    largePanelConfig[8]["x"] = xL + (dW * 5 / 6)
+    largePanelConfig[8]["y"] = yT + (dH * 1 / 8)
+    largePanelConfig[9]["x"] = xL + (dW * 5 / 6)
+    largePanelConfig[9]["y"] = yT + (dH * 3 / 8)
+    largePanelConfig[10]["x"] = xL + (dW * 5 / 6)
+    largePanelConfig[10]["y"] = yT + (dH * 5 / 8)
+    largePanelConfig[11]["x"] = xL + (dW * 5 / 6)
+    largePanelConfig[11]["y"] = yT + (dH * 7 / 8)
+
+
+def largePanelEmojiDraw():
+    # get vars
+    xL = GlobalV.displays[0].xLeft
+    yT = GlobalV.displays[0].yTop
+    dW = GlobalV.displays[0].dWidth
+    dH = GlobalV.displays[0].dHeight
     # black background
     fill(color(0, 0, 0))
-    rect(display.xLeft, display.yTop, display.dWidth, display.dHeight)
-    # get a column of emojis
-    emojiList = [
-        # first column
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth / 6),
-            "y": display.yTop + (display.dHeight * 2 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth / 6),
-            "y": display.yTop + (display.dHeight * 4 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth / 6),
-            "y": display.yTop + (display.dHeight * 6 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth / 6),
-            "y": display.yTop + (display.dHeight * 8 / 9),
-        },
-        # second column
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth * 3 / 6),
-            "y": display.yTop + (display.dHeight * 2 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth * 3 / 6),
-            "y": display.yTop + (display.dHeight * 4 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth * 3 / 6),
-            "y": display.yTop + (display.dHeight * 6 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth * 3 / 6),
-            "y": display.yTop + (display.dHeight * 8 / 9),
-        },
-        # third column
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth * 5 / 6),
-            "y": display.yTop + (display.dHeight * 2 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth * 5 / 6),
-            "y": display.yTop + (display.dHeight * 4 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth * 5 / 6),
-            "y": display.yTop + (display.dHeight * 6 / 9),
-        },
-        {
-            "column": 0,
-            "direction": "down",
-            "x": display.xLeft + (display.dWidth * 5 / 6),
-            "y": display.yTop + (display.dHeight * 8 / 9),
-        },
-    ]
+    rect(xL, yT, dW, dH)
+    # draw the emojis
     imageMode(CENTER)
-    for img in emojiList:
+    for img in largePanelConfig:
         imageData = loadImage("emoji-160/" + pickRandomEmojiImage())
+        # draw image
         image(imageData, img["x"], img["y"])
+        # increment for next render
+        direction = -1 if img["direction"] == "down" else 1
+        # img["y"] = (img["y"] + (10 * direction)) % GlobalV.displays[0].dHeight
 
 
 def setup():
     fullScreen(2)
     di = DisplayImporter("../mapper/mapping-final.json")
     di.importFile(GlobalV.displays)
+    largePanelConfigInit()
 
 
 def draw():
     # draw on the large panel
-    GlobalV.displays[0].draw(callback=largePanelEmojiDraw)
+    largePanelEmojiDraw()
     # draw on the small panels outside
     for d in GlobalV.displays[1:]:
         d.draw(callback=smallPanelEmojiDraw)
