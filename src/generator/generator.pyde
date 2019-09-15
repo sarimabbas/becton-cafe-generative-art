@@ -123,7 +123,7 @@ def largePanelEmojiDraw(display):
 
 
 def setup():
-    fullScreen(2)
+    fullScreen()
     di = DisplayImporter("../mapper/mapping-final.json")
     di.importFile(GlobalV.displays)
 
